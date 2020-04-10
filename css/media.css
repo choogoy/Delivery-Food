@@ -1,0 +1,290 @@
+@media (max-width: 1260px) {
+    .container {
+        max-width: 822px;
+    }
+
+    .header-main__content {
+        background-size: 600px;
+        background-position: top -150px right -300px ;
+    }
+
+    .header-main__text {
+        width: 500px;
+    }
+
+    .header-main__title {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .header-main__description {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 836px) {
+
+    .container {
+        max-width: 700px;
+    }
+
+    .header-main__content {
+        height: 250px;
+        background-size: 500px;
+        background-position: top -125px right -300px ;
+    }
+
+    .header-main__text {
+        padding-left: 45px;
+    }
+
+    .header-main__title {
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 15px;
+    }
+    
+    .header-main__description {
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 400px;
+    }
+
+    .restaurants-content {
+        justify-content: center;
+    }
+
+    .content-restaurant {
+        padding-bottom: 30px;
+    }
+
+    .products {
+        justify-content: center;
+    }
+
+    .footer {
+        height: 100px;
+    }
+
+    .footer-nav__link {
+        font-size: 14px;
+    }
+
+    .footer-socials__item {
+        margin-left: 11px;
+        cursor: pointer;
+    }
+
+    .restaurant-header {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .container {
+        max-width: 500px;
+    }
+
+    .header-top {
+        flex-wrap: wrap;
+    }
+
+    .search-input {
+        flex-basis: 100%;
+        order: 2;
+        margin-top: 15px;
+    }
+
+    .header-main__content {
+        background-image: none;
+    }
+
+    .header-main__text {
+        padding-left: 30px;
+    }
+
+    .header-main__title {
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+    .header-main__description {
+        font-size: 16px;
+        padding-right: 60px;
+    }
+
+    .restaurants {
+        margin-top: 30px;
+    }
+
+    .restaurants-top {
+        flex-wrap: wrap;
+    }
+
+    .restaurants-top__title {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .restaurants-top__input {
+        flex: 100%;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        padding: 20px 0;
+    }
+
+    .footer__logo {
+        order: 0;
+    }
+
+    .footer-socials {
+        order: 1;
+    }
+
+    .footer-nav {
+        margin: 20px 0;
+        order: 2;
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .product-item__img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .restaurant-header {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .restaurant__name {
+        flex-basis: 100%;
+    }
+
+    .product-item {
+        height: auto;
+    }
+    
+    .product-item__btn {
+        padding-bottom: 20px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    body {
+        padding-top: 20px;
+    }
+
+    .container {
+        overflow: hidden;
+        max-width: 320px;
+    }
+
+    .button {
+        height: 40px;
+    }
+
+    .button-text {
+        display: none;
+    }
+
+    .button-icon {
+        margin-right: 0;
+    }
+    
+    .header-main__content {
+        height: 200px;
+    }
+
+    .header-main__text {
+        padding-left: 25px;
+    }
+
+    .header-main__title {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .header-main__description {
+        font-size: 14px;
+        padding-right: 15px;
+    }
+
+    .card {
+        height: 420px;
+    }
+
+    .item-footer__name {
+        font-size: 22px;
+    }
+
+    .item-footer__description {
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+
+    .item-footer__description span {
+        font-size: 16px;
+    }
+
+    .item-footer__rating {
+        flex: 100%;
+    }
+
+    .footer-nav {
+        margin: 0;
+    }
+
+    .footer-nav__items {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-nav__link {
+        margin-right: 0;
+    }
+
+    .footer {
+        height: 220px;
+        text-align: center;
+    }
+
+    .footer__logo {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+
+    .footer-socials {
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    .restaurant__rating {
+        flex-basis: 100%;
+    }
+
+    .product-item__name {
+        font-size: 22px;
+    }
+
+    .product-item__description {
+        font-size: 16px;
+    }
+
+
+}
