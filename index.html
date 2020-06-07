@@ -1,194 +1,216 @@
 <!DOCTYPE html>
-
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delivery Food - доставка еды на дом</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Delivery Food — доставка еды на дом</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 </head>
-
 <body>
+	<div class="container">
+		<header class="header">
+			<a class="logo">
+				<img src="img/icon/logo.svg" alt="Logo"/>
+			</a>
+			<label class="address">
+				<input type="text" class="input input-address" placeholder="Адрес доставки"/>
+			</label>
+			<div class="buttons">
+				<span class="user-name"></span>
+				<button class="button button-primary button-auth">
+					<span class="button-auth-svg"></span>
+					<span class="button-text">Войти</span>
+				</button>
+				<button class="button button-cart" id="cart-button">
+					<span class="button-cart-svg"></span>
+					<span class="button-text">Корзина</span>
+				</button>
+				<button class="button button-primary button-out">
+					<span class="button-text">Выйти</span>
+					<span class="button-out-svg"></span>
+				</button>
+			</div>
+		</header>
+	</div>
+	<!-- /.container  -->
 
-<div class="container">
+	<main class="main">
+		<div class="container">
+			<div class="container-promo swiper-container">
+				<div class="swiper-wrapper">
+					<section class="swiper-slide promo pizza">
+						<h1 class="promo-title">Онлайн-сервис <br/>доставки еды на дом</h1>
+						<p class="promo-text">
+							Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
+						</p>
+					</section>
+					<section class="swiper-slide promo kebab">
+						<h1 class="promo-title">Шашлыки на майские <br> со скидкой 35%</h1>
+						<p class="promo-text">
+							Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
+						</p>
+					</section>
+					<section class="swiper-slide promo vegetables">
+						<h1 class="promo-title">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
+						<p class="promo-text">
+							Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
+						</p>
+					</section>
+					<section class="swiper-slide promo sushi">
+						<h1 class="promo-title">Сеты со скидкой до 30% <br> в ресторанах</h1>
+						<p class="promo-text">
+							Скидки на сеты до 30 мая по промокоду DADADA
+						</p>
+					</section>
+				</div>
+			</div>
+			<section class="restaurants">
+				<div class="section-heading">
+					<h2 class="section-title">Рестораны</h2>
+					<label class="search">
+						<input type="text" class="input input-search" placeholder="Поиск блюд и ресторанов"/>
+					</label>
+				</div>
+				<div class="cards cards-restaurants">
 
-    <header class="header-top">
-        <a href="index.html"><img class="logo" src="img/logo.svg" alt="logo"></a>
-        <input class="input search-input" type="text" placeholder="Адрес доставки">
-        <div class="buttons">
-            <button class="button button-primary">
-                <img class="button-icon" src="img/user.svg" alt="login">
-                <span class="button-text">Войти</span>
-            </button>
-            <button class="button button-cart">
-                <img class="button-icon" src="img/shopping-cart.svg" alt="cart">
-                <span class="button-text">Корзина</span>
-            </button>
-        </div>
-    </header>
+				</div>	
 
-</div>
+			</section>
+			<section class="menu hide">			
+				<div class="section-heading">
+					<h2 class="section-title restaurant-title">Пицца Плюс</h2>
+					<div class="card-info">
+						<div class="rating">
+							4.5
+						</div>
+						<div class="price">От 900 ₽</div>
+						<div class="category">Пицца</div>
+					</div>
 
+				</div>
+				<div class="cards cards-menu">
 
- <div class="content content-restaurant">
+				</div>
+			</section>
 
-    <div class="container">
+		</div>
+		<!-- /.container -->
+	</main>
 
-        <section class="header-main">
-            <div class="header-main__content">
-                <div class="header-main__text">
-                    <h3 class="header-main__title">Онлайн-сервис<br>доставки еды на дом</h3>
-                    <p class="header-main__description">Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком</p>
-                </div>
-            </div>
-        </section>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-block">
+				<img src="img/icon/logo.svg" alt="logo" class="logo footer-logo"/>
+				<nav class="footer-nav">
+					<a href="#" class="footer-link">Ресторанам </a>
+					<a href="#" class="footer-link">Курьерам</a>
+					<a href="#" class="footer-link">Пресс-центр</a>
+					<a href="#" class="footer-link">Контакты</a>
+				</nav>
+				<div class="social-links">
+					<a href="#" class="social-link"><img src="img/social/instagram.svg" alt="instagram"/></a>
+					<a href="#" class="social-link"><img src="img/social/fb.svg" alt="facebook"/></a>
+					<a href="#" class="social-link"><img src="img/social/vk.svg" alt="vk"/></a>
+				</div>
+				<!-- /.social-links -->
+			</div>
+			<!-- /.footer-block -->
+		</div>
+	</footer>
 
-        <section class="restaurants">
+	<div class="modal modal-cart">
+		<div class="modal-dialog">
+			<div class="modal-header">
+				<h3 class="modal-title">Корзина</h3>
+				<button class="close">&times;</button>
+			</div>
+			<!-- /.modal-header -->
+			<div class="modal-body">
+				<div class="food-row">
+					<span class="food-name">Ролл угорь стандарт</span>
+					<strong class="food-price">250 ₽</strong>
+					<div class="food-counter">
+						<button class="counter-button">-</button>
+						<span class="counter">1</span>
+						<button class="counter-button">+</button>
+					</div>
+				</div>
+				<!-- /.foods-row -->
+				<div class="food-row">
+					<span class="food-name">Ролл угорь стандарт</span>
+					<strong class="food-price">250 ₽</strong>
+					<div class="food-counter">
+						<button class="counter-button">-</button>
+						<span class="counter">1</span>
+						<button class="counter-button">+</button>
+					</div>
+				</div>
+				<!-- /.foods-row -->
+				<div class="food-row">
+					<span class="food-name">Ролл угорь стандарт</span>
+					<strong class="food-price">250 ₽</strong>
+					<div class="food-counter">
+						<button class="counter-button">-</button>
+						<span class="counter">1</span>
+						<button class="counter-button">+</button>
+					</div>
+				</div>
+				<!-- /.foods-row -->
+				<div class="food-row">
+					<span class="food-name">Ролл угорь стандарт</span>
+					<strong class="food-price">250 ₽</strong>
+					<div class="food-counter">
+						<button class="counter-button">-</button>
+						<span class="counter">1</span>
+						<button class="counter-button">+</button>
+					</div>
+				</div>
+				<!-- /.foods-row -->
+			</div>
+			<!-- /.modal-body -->
+			<div class="modal-footer">
+				<span class="modal-pricetag">1250 ₽</span>
+				<div class="footer-buttons">
+					<button class="button button-primary">Оформить заказ</button>
+					<button class="button clear-cart">Отмена</button>
+				</div>
+			</div>
+			<!-- /.modal-footer -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
 
-            <div class="restaurants-top">
-                <h3 class="restaurants-top__title">Рестораны</h3>
-                <input class="input restaurants-top__input" type="text" placeholder="Поиск блюд и ресторанов">
-            </div>
-
-            <div class="restaurants-content">
-
-                <a href="restaurant.html" class="card">
-                    <div class="card__img">
-                        <img src="img/image-1.jpg" alt="image">
-                    </div>
-                    <div class="item-footer">
-                        <div class="item-footer__title">
-                            <span class="item-footer__name">Пицца плюс</span>
-                            <span class="item-footer__time">50 мин</span>
-                        </div>
-                        <div class="item-footer__description">
-                            <span class="item-footer__rating">4.5</span>
-                            <span class="item-footer__price">От 900 ₽</span>
-                            <span class="item-footer__category">Пицца</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="restaurant.html" class="card">
-                    <div class="card__img">
-                        <img src="img/image-2.jpg" alt="image">
-                    </div>
-                    <div class="item-footer">
-                        <div class="item-footer__title">
-                            <span class="item-footer__name">Тануки</span>
-                            <span class="item-footer__time">60 мин</span>
-                        </div>
-                        <div class="item-footer__description">
-                            <span class="item-footer__rating">4.5</span>
-                            <span class="item-footer__price">От 1 200 ₽</span>
-                            <span class="item-footer__category">Суши, роллы</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="restaurant.html" class="card">
-                    <div class="card__img">
-                        <img src="img/image-3.jpg" alt="image">
-                    </div>
-                    <div class="item-footer">
-                        <div class="item-footer__title">
-                            <span class="item-footer__name">FoodBand</span>
-                            <span class="item-footer__time">40 мин</span>
-                        </div>
-                        <div class="item-footer__description">
-                            <span class="item-footer__rating">4.5</span>
-                            <span class="item-footer__price">От 450 ₽</span>
-                            <span class="item-footer__category">Пицца</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="restaurant.html" class="card">
-                    <div class="card__img">
-                        <img src="img/image-4.jpg" alt="image">
-                    </div>
-                    <div class="item-footer">
-                        <div class="item-footer__title">
-                            <span class="item-footer__name">Жадина-пицца</span>
-                            <span class="item-footer__time">55 мин</span>
-                        </div>
-                        <div class="item-footer__description">
-                            <span class="item-footer__rating">4.5</span>
-                            <span class="item-footer__price">От 500 ₽</span>
-                            <span class="item-footer__category">Пицца</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="restaurant.html" class="card">
-                    <div class="card__img">
-                        <img src="img/image-5.jpg" alt="image">
-                    </div>
-                    <div class="item-footer">
-                        <div class="item-footer__title">
-                            <span class="item-footer__name">Точка еды</span>
-                            <span class="item-footer__time">75 мин</span>
-                        </div>
-                        <div class="item-footer__description">
-                            <span class="item-footer__rating">4.5</span>
-                            <span class="item-footer__price">От 1 000 ₽</span>
-                            <span class="item-footer__category">Русская кухня</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="restaurant.html" class="card">
-                    <div class="card__img">
-                        <img src="img/image-6.jpg" alt="image">
-                    </div>
-                    <div class="item-footer">
-                        <div class="item-footer__title">
-                            <span class="item-footer__name">PizzaBurger</span>
-                            <span class="item-footer__time">45 мин</span>
-                        </div>
-                        <div class="item-footer__description">
-                            <span class="item-footer__rating">4.5</span>
-                            <span class="item-footer__price">От 700 ₽</span>
-                            <span class="item-footer__category">Пицца</span>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-
-        </section>
-
-    </div>
-
-</div> 
-
-<div class="container">
-    <footer class="footer">
-
-        <a href="index.html"><img class="logo footer__logo" src="img/logo.svg" alt="logo"></a>    
-        <nav class="footer-nav">
-            <ul class="footer-nav__items">
-                <li class="footer-nav__link">Ресторанам</li>
-                <li class="footer-nav__link">Курьерам</li>
-                <li class="footer-nav__link">Пресс-центр</li>
-                <li class="footer-nav__link">Контакты</li>
-            </ul>
-        </nav>
-
-        <div class="footer-socials">
-            <img class="footer-socials__item" src="img/instagram.svg" alt="instagram">
-            <img class="footer-socials__item" src="img/facebook.svg" alt="facebook">
-            <img class="footer-socials__item" src="img/vkontakte.svg" alt="vkontakte">
-        </div>
-    </footer>           
-</div>
-
-</div>
-
+	<div class="modal-auth">
+		<div class="modal-dialog modal-dialog-auth">
+			<button class="close-auth">&times;</button>
+			<form id="logInForm">
+				<fieldset class="modal-body">
+					<legend class="modal-title">Авторизация</legend>
+					<label class="label-auth">
+						<span>Логин</span>
+						<input id="login" type="text">
+					</label>
+					<label class="label-auth">
+						<span>Пароль</span>
+						<input id="password" type="password">
+					</label>
+				</fieldset>
+				<!-- /.modal-body -->
+				<div class="modal-footer">
+					<div class="footer-buttons">
+						<button class="button button-primary button-login" type="submit">Войти</button>
+					</div>
+				</div>
+			</form>
+			<!-- /.modal-footer -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
