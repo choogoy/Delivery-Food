@@ -22,7 +22,6 @@ document.addEventListener ('DOMContentLoaded', () => {
     rating = document.querySelector ('.rating'),
     minPrice = document.querySelector ('.price'),
     category = document.querySelector ('.category'),
-    inputSearch = document.querySelector ('.input-search'),
     modalBody = document.querySelector ('.modal-body'),
     modalPrice = document.querySelector ('.modal-pricetag'),
     buttonClearCart = document.querySelector ('.clear-cart');
@@ -30,22 +29,6 @@ document.addEventListener ('DOMContentLoaded', () => {
   let login = localStorage.getItem('gloDelivery');
 
   const cart = [];
-
-  const loadCart = () => {
-
-    if (localStorage.getItem(login)) {
-      JSON.parse(localStorage.getItem(login)).forEach(item => cart.push(item));
-    }
-
-  };
-
-  console.log(cart);
-
-  const saveCart = () => {
-
-    localStorage.setItem(login, JSON.stringify(cart));
-
-  };
 
   const getData = async function (url) {
 
@@ -61,12 +44,6 @@ document.addEventListener ('DOMContentLoaded', () => {
 
   getData('./db/partners.json');
 
-  const valid = str => {
-    const nameReg =/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
-    console.log(nameReg);
-    return nameReg.test(str);
-  };
-
   const toggleModal = () => modal.classList.toggle("is-open");
 
   const toggleModalAuth = () => modalAuth.classList.toggle('is-open');
@@ -75,7 +52,6 @@ document.addEventListener ('DOMContentLoaded', () => {
 
     const logOut = () => {
       login = null;
-      cart.length = 0;
       localStorage.removeItem('gloDelivery');
       buttonAuth.style.display = '';
       userName.style.display = '';
@@ -93,8 +69,8 @@ document.addEventListener ('DOMContentLoaded', () => {
     userName.style.display = 'inline';
     buttonOut.style.display = 'flex';
     cartButton.style.display = 'flex';
+
     buttonOut.addEventListener('click', logOut);
-    loadCart();
 
   };
 
@@ -104,7 +80,7 @@ document.addEventListener ('DOMContentLoaded', () => {
     const logIn = event => {
       event.preventDefault();
 
-      if (valid(logInInput.value)) {
+      if (logInInput.value) {
 
         logInInput.style.borderColor = '';
         login = logInInput.value;
@@ -122,7 +98,6 @@ document.addEventListener ('DOMContentLoaded', () => {
       } else {
         logInInput.style.borderColor = 'red';
         logInInput.setAttribute('required', true);
-        logInInput.value = '';
       }
 
     };
@@ -253,9 +228,6 @@ document.addEventListener ('DOMContentLoaded', () => {
           });
         }
     };
-
-    saveCart();
-
   };
 
   const renderCart = () => {
@@ -288,26 +260,19 @@ document.addEventListener ('DOMContentLoaded', () => {
     const target = event.target;
 
     if (target.classList.contains('counter-button')) {
-
       const food = cart.find(item => item.id === target.dataset.id);
 
-      if (target.classList.contains('counter-minus')) {
-        food.count--;
-
-        if (food.count === 0) {
-          cart.splice(cart.indexOf(food), 1);
-        }
-
+    if (target.classList.contains('counter-minus')) {
+      food.count--;
+      if (food.count === 0) {
+        cart.splice(cart.indexOf(food), 1);
       }
+    };
+    if (target.classList.contains('counter-plus')) food.count++;
 
-      if (target.classList.contains('counter-plus')) food.count++;
+    };
 
-      renderCart();
-
-    }
-
-    saveCart();
-    
+    renderCart();
   };
 
   const init = () => {
@@ -339,80 +304,13 @@ document.addEventListener ('DOMContentLoaded', () => {
       restaurants.classList.remove('hide');
       menu.classList.add('hide');
     });
-
-    inputSearch.addEventListener('keydown', event => {
-
-      if (event.keyCode === 13) {
-
-        const target = event.target;
-
-        const value = target.value.toLowerCase().trim();
-
-        target.value = '';
-
-        if (!value || value.length < 3) {
-
-          target.style.backgroundColor = 'tomato';
-
-          setTimeout( () => {
-            target.style.backgroundColor = '';
-          }, 2000);
-
-          return;
-
-        }
-
-        const goods = [];
-
-        getData('./db/partners.json')
-          .then(data => {
-            const products = data.map(item => item.products);
-            products.forEach(product => {
-              getData(`./db/${product}`)
-                .then(data => {
-                  goods.push(...data);
-
-                  const searchGoods = goods.filter(item => item.name.toLowerCase().includes(value));
-
-                  cardsMenu.textContent = '';
-
-                  containerPromo.classList.add('hide');
-                  restaurants.classList.add('hide');
-                  menu.classList.remove('hide');
-          
-                  restaurantTitle.textContent = 'Результат поиска';
-                  rating.textContent = '';
-                  minPrice.textContent = '';
-                  category.textContent = '';
-
-                  return searchGoods;
-          
-                })
-                .then(data => {
-
-                  data.forEach(createCardGood);
-
-                    if (data.length === 0) {
-                      cardsMenu.insertAdjacentHTML('afterbegin', 'По вашему запросу ничего не найдено');
-
-
-                    };
-
-                  });
-
-
-            });
-          });
-      };
-
-    });
   
     checkAuth();
 
     new Swiper ('.swiper-container', {
       loop: true,
-      slidesPerView: 1,
-      autoplay: true
+      sliderPerView: 1,
+      // autoplay: true
     });
 
   };
